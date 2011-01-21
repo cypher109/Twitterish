@@ -1,0 +1,11 @@
+<h1>Subscriptions</h1>
+
+<table>
+
+<% @subscriptions.each do |subscription| %>
+	<tr>
+		<td><%= link_to subscription.publisher.name, subscription.publisher %></td>
+	</tr>
+<% end %>
+
+</table>
