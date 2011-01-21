@@ -1,9 +1,5 @@
 class MessagesController < ApplicationController
-  def index
-    @user = User.find(params[:user_id])
-	@messages = @user.messages
-  end
-
+  
   # GET /messages/new
   # GET /messages/new.xml
   def new

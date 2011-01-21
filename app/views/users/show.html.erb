@@ -12,7 +12,7 @@
   <b>Tel num:</b>
   <%=h @user.tel_num %>
 </p>
-
+<%= render :partial => "messages/list" %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
