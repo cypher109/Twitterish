@@ -1,0 +1,12 @@
+<h1>Subscribe to this person!</h1>
+<% form_for([@user,@new_subscription]) do |f| %>
+	<%= f.error_messages %>
+	<%= f.hidden_field :publisher_id %>
+	<p>
+		<%= f.label :subscriber_id %><br />
+		<%= f.text_field :subscriber_id %>
+	</p>
+	<p>
+    <%= f.submit 'Subscribe' %>
+  </p>
+<% end %>
