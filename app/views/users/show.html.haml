@@ -1,18 +1,18 @@
 %p
   %b Name:
-  %=h @user.name
+  =h @user.name
 
 %p
   %b Email:
-  %=h @user.email
+  =h @user.email
 
 %p
   %b Tel num:
-  %=h @user.tel_num
+  =h @user.tel_num
 
 = render :partial => "messages/list"
 = render :partial => "subscriptions/list"
 = render :partial => "subscriptions/form"
 
-%= link_to 'Edit', edit_user_path(@user)
-%= link_to 'Back', users_path
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path
