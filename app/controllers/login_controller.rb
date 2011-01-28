@@ -1,8 +1,8 @@
 class LoginController < ApplicationController
   skip_before_filter :require_login, :only => [:new, :create]
+  layout "login"
 
   def new
-    
   end
   
   def create
