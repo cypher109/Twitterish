@@ -11,7 +11,8 @@
   =h @user.tel_num
 
 = render :partial => "messages/list"
-= render :partial => "subscriptions/list"
+- if @user.id == session[:current_user_id]
+  = render :partial => "subscriptions/list"
 = render :partial => "subscriptions/form"
 
 = link_to 'Edit', edit_user_path(@user)
