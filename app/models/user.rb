@@ -5,13 +5,6 @@ class User < ActiveRecord::Base
 	has_many :subscriptions, :foreign_key => "subscriber_id"
 	has_many :published_subscriptions, :class_name => "Subscription", :foreign_key => "publisher_id"
   
-  # Paperclip
-  has_attached_file :photo,
-    :styles => {
-      :thumb => "100x100#",
-      :small  => "150x150>" 
-    }
-  
   def self.authenticate( options = {} )
     User.first(:conditions => {
       :email => options[:email], 

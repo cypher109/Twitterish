@@ -55,22 +55,6 @@ class UsersController < ApplicationController
       end
     end
   end
-  
-  def new_photo
-    @user = User.find(params[:id])
-    if !current_user?
-      redirect_to user_path(@user), :alert => "Incorrect user!"
-    end
-  end
-  
-  def upload_photo
-    @user = User.find(params[:id])
-    if current_user?
-      @user.photo = params[:user][:photo]
-      @user.save!
-    end
-    redirect_to user_path(@user)
-  end
 
   # PUT /users/1
   # PUT /users/1.xml
@@ -98,10 +82,5 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
-  end
-  
-private
-  def current_user?
-    @user.id == session[:current_user_id]
   end
 end
