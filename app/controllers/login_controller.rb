@@ -15,4 +15,9 @@ class LoginController < ApplicationController
       redirect_to url_for(:action => "new")
     end
   end
+  
+  def logout
+    session[:current_user_id] = nil
+    redirect_to root_path
+  end
 end

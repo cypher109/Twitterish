@@ -7,5 +7,7 @@
   %body
     %p{:style=>"color: green"}= notice
     %p{:style=>"color: red"}= alert
+    
+    = link_to 'Logout', url_for(:controller => "login", :action => "logout")
 
     = yield
