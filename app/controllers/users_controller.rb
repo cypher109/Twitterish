@@ -14,9 +14,10 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-	@messages = @user.messages
-	@subscriptions = @user.subscriptions.all(:include => :publisher)
-	@new_subscription = @user.published_subscriptions.new
+    @messages = @user.messages
+    @subscriptions = @user.subscriptions.all(:include => :publisher)
+    @new_subscription = @user.published_subscriptions.new
+    @new_subscription.subscriber_id = session[:current_user_id]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
