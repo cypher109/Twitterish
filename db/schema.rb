@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110121190307) do
+ActiveRecord::Schema.define(:version => 20110126164932) do
 
   create_table "messages", :force => true do |t|
     t.text     "content"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110121190307) do
     t.string   "tel_num"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password"
   end
 
 end

@@ -15,7 +15,7 @@ private
   end
   
   def current_user
-    session[:user]
+    session[:current_user_id]
   end
 
   # Scrub sensitive parameters from your log
